@@ -1,0 +1,7 @@
+#!/bin/sh
+
+: "${RKE_BIN:=/usr/local/bin/rke}"
+if ! rke --version; then
+	wget -O /usr/local/bin/rke "https://github.com/rancher/rke/releases/download/v0.1.18/rke_linux-amd64"
+fi
+chmod +x $RKE_BIN
